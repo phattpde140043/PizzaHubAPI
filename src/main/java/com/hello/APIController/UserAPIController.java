@@ -58,6 +58,9 @@ public class UserAPIController {
 		return new ResponseEntity<User>(userDAO.UpdateUserInfo(us), HttpStatus.OK);
 	}
 	
-	
+	@RequestMapping(value = "/account/", method = RequestMethod.POST)
+	public int createAccount(@Validated @RequestBody Account acc) {
+		return userDAO.CreateNewAccount(acc.getUserName(), acc.getPassword());
+	}
 
 }

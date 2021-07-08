@@ -83,8 +83,8 @@ public class UserDAO implements DatabaseInfo {
         }
     }
 
-    public boolean CreateNewAccount(String UserName, String Password) {
-        boolean result = false;
+    public int CreateNewAccount(String UserName, String Password) {
+        
         try {
             Class.forName(driverName);
             int rc = -1;
@@ -108,12 +108,13 @@ public class UserDAO implements DatabaseInfo {
                     System.err.println(e);
 
                 }
+                return GetIdByUserName(UserName);
             }
-            return rc == 1;
+            return -1;
         } catch (ClassNotFoundException | SQLException e) {
             System.err.println("Class UserDAO- function: Create new account");
             System.err.println(e);
-            return false;
+            return -1;
         }
     }
 
