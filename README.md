@@ -58,3 +58,16 @@ Trả về: JSON<br>
     "phone": "1",<br>
     "email": "3"<br>
 }<br>
+<hr>
+[done]<br>
+{link_server}/user/account/<br>
+type: POST<br>
+bodyRequest: JSON.<br>
+{<br>
+    "password": "default",<br>
+    "userName": "PhatTP"
+    <br>
+}<br>
+Công dụng: Tạo một tài khoản mới.<br>
+Trả về: Text<br>
+8 //id của tài khoản mới.
